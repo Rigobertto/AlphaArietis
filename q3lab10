@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int ok(int, int, int, int, int);
+
+int main()
+{
+
+	int vetA[5];
+	cout << "Digite 5 valores: ";
+	cin >> vetA[0];
+	cin.ignore();
+	cin >> vetA[1];
+	cin.ignore();
+	cin >> vetA[2];
+	cin.ignore();
+	cin >> vetA[3];
+	cin.ignore();
+	cin >> vetA[4];
+
+
+
+	cout << "A soma do vetor é: " << ok(vetA[0], vetA[1], vetA[2], vetA[3], vetA[4]);
+	
+	return 0;
+
+}
+
+
+int ok(int a, int b, int c, int d, int e)
+{
+	int soma;
+	soma = a + b + c + d + e;
+
+
+	return soma;
+}
