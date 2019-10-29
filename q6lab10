@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+double ok(double, double, double);
+
+int main()
+{
+
+	double vet[3];
+	double res;
+	cin >> vet[0];
+	cin >> vet[1];
+	cin >> vet[2];
+
+	res = ok(vet[0], vet[1], vet[2]);
+
+	cout << res << endl;
+
+
+	return 0;
+}
+
+
+double ok(double a, double b, double c)
+{
+	double resu;
+
+	resu = a * c - b;
+
+
+	return resu;
+
+}
