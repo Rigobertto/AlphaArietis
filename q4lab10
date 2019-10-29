@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int vet[5]{ 10,80,30,45,15 };
+	int pos;
+
+	cout << "Vetor: " << vet[0] << " " << vet[1] << " " << vet[2] << " " << vet[3] << " " << vet[4] << endl;
+	cout << "-----------------------------------------";
+	cout << endl;
+	
+	cout << "Alterar posição: ";
+	cin >> pos;
+	cout << "Novo valor: ";
+
+	if (pos == 0)
+		cin >> vet[0];
+
+	if (pos == 1)
+		cin >> vet[1];
+
+	if (pos == 2)
+		cin >> vet[2];
+
+	if (pos == 3)
+		cin >> vet[3];
+
+	if (pos == 4)
+		cin >> vet[4];
+
+	cout << "-----------------------------------------\n";
+	cout << "Vetor: " << vet[0] << " " << vet[1] << " " << vet[2] << " " << vet[3] << " " << vet[4] << endl;
+
+
+	return 0;
+}
