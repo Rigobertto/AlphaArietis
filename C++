@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+void linha();
+
+int main()
+{
+
+	double preco[3]{ 1.50, 2.00, 1.00 }; //vetor do preço
+	double quant[3]; //vetor da quantidade por kg.
+  
+	cout << "Prezado cliente, \n";
+	cout << "Digite a quantidade de de quilos desejado: \n";
+	cout << "Alface: ";
+	cin >> quant[0];
+	cout << "Beterraba: ";
+	cin >> quant[1];
+	cout << "Cenoura: ";
+	cin >> quant[2];
+	cout << endl;
+
+	double a, b, c; // declara variaveis para atribuir os valores do resultado da compra.
+	a = preco[0] * quant[0]; // Alface
+	b = preco[1] * quant[1]; // Beterraba
+	c = preco[2] * quant[2]; // Cenoura
+
+	cout << fixed;
+	cout.precision(2); // Duas casas após a vírgula.
+
+	cout << "Resumo da compra" << endl;
+	linha();
+	cout << "Alface = R$" << a << endl <<
+		    "Beterraba = R$" << b << endl <<
+		    "Cenoura = R$" << c << endl;
+
+	linha();
+	cout << "Total: " << a+b+c ; // exibe o total.
+
+
+	return 0;
+
+}
+
+
+void linha() // definição da função linha.
+{
+
+
+	cout << "-----------------" << endl;
+
+}
