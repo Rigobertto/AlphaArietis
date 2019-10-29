@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int notas[3];
+	double m1, m2;
+	float peso[3]{ 2,3,4 };
+
+	cout << "Digite suas notas: " << endl;
+	cin >> notas[0];
+	cin >> notas[1];
+	cin >> notas[2];
+
+	m1=((notas[0] * peso[1]) + (notas[1] * peso[1]) + (notas[2] * peso[2])) / (peso[0] + peso[1] + peso[2]);// Fórmula para a média das notas com os pesos.
+	cout << endl;
+	cout << "Média em peso: " << m1 << endl;
+
+	m2 = (notas[0] + notas[1] + notas[2]) / 3;
+	cout << "Média aritimetica: "<< m2;
+
+
+	return 0;
+}
