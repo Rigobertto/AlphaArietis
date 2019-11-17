@@ -20,5 +20,5 @@ int main()
 	else
 		cout << "o conceito digitado é invalido!"; // Caso seja outro caractere, exibe a mensagem de conceito invalido.
 
-	return 0;
+
 }
