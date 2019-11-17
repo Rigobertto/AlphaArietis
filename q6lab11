@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string> // Biblioteca para manipulação de strings.
+using namespace std;
+
+int main()
+{
+	cout << "Digite a senha: ";
+	char a[10];//declara uma string
+	cin >> a;
+//a senha definida foi "senh"
+	if ((a[0] == 's') && (a[1] == 'e') && (a[2] == 'n') && (a[3] == 'h') && (a[4] == 0)) // compara o vetor para saber se a senha está correta.
+		cout << "Senha está correta!" << endl;
+	else
+		cout << "Senha incorreta!";
+
+	return 0;
+}
