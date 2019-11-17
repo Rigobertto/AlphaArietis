@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	const int tam = 20; //Declara uma constante
+	char n1[tam]; // Declara uma string
+	char n2[tam]; // Declara a segunda string
+
+	cout << "Qual seu primeiro nome? ";
+	cin >> n1; // Ler a primeira string
+	cout << "Qual seu segundo nome? ";
+	cin >> n2; // Ler a segunda string
+	cout << endl;
+
+	cout << "Bom dia, " << n1 << " " << n2 << endl; // Exibe as strings.
+	cout << "Seja bem-vindo " << n1[0] << n2[0] << "!"; //Exibe as primeiras letras dentro das strings
+
+
+	return 0;
+}
