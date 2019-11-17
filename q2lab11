@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	const int tam = 80; // Declara constante
+	char nome[tam]; //Declara string
+	char con; // Declara caractere
+
+	cout << "Qual seu nome completo? ";
+	cin.getline(nome, tam); // Ler nomes com espaços dentro da string
+	cout << "Qual conceito você merece? ";
+	cin >> con; // Ler a caractere
+	cout << endl;
+
+	cout << "Bom dia " << nome << ", ";
+	if ((con >= 'A') && (con <= 'Z')) // Compara se o caractere está entre o alfabeto maiúsculo da tabela ASCCI
+		cout << "seu conceito é " << char(con + 1); // Caso a condição seja estabelecida, o operador recebe o conceito abaixo do digitado.
+	else
+		cout << "o conceito digitado é invalido!"; // Caso seja outro caractere, exibe a mensagem de conceito invalido.
+
+	return 0;
+}
