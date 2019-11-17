@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string> // Biblioteca para manipulação de strings.
+using namespace std;
+
+int main()
+{
+	char nome[] = "C++ Primer Plus"; // Declara vetor sem tamanho definido e inicializa ele com frase.
+
+	cout << "Tamanho do vetor: " << sizeof(nome) << endl; // Quantidade de Bytes utilizados no vetor
+	cout << "Quantidade de caracteres do vetor: " << strlen(nome); // Quantidade de caracteres do vetor.
+
+	return 0;
+}
