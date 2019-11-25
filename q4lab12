@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+struct chocolate 
+{
+	char marca[50];
+	float peso;
+	int caloria;
+
+};
+
+
+int main()
+{
+	chocolate lanche[3] = { "Change", 2.3, 350, "Nestle", 4.3, 360, "CacauShow", 3.4, 550 };
+
+	cout << lanche[0].marca << " " << lanche[0].peso << " " << lanche[0].caloria << endl;
+	cout << lanche[1].marca << " " << lanche[1].peso << " " << lanche[1].caloria << endl;
+	cout << lanche[2].marca << " " << lanche[2].peso << " " << lanche[2].caloria << endl;
+
+	return 0;
+}
