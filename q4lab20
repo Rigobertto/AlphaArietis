@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+//Escreva um programa que use um laço para ler a velocidade de 10 carros para um
+//vetor de inteiros.Conte quantos carros ultrapassaram o limite de 80Km / h, calcule
+//o valor total arrecadado em multas e o valor de multa que cada um deve pagar.A
+//multa é de R$8 por km excedido
+
+
+int main()
+{
+	const int tam = 10;
+	int vet[tam] = { 0 };
+	
+	cout << "As últimas 10 velocidades registradas :" << endl;
+
+	for (int i = 0; i < tam; i++)
+	{
+		cin >> vet[i];
+	}
+
+	int b = 0, c = 0, total = 0, multa = 0;
+	for (int a = 0; a < tam; a++)
+	{
+		if (vet[a] >= 80)
+		{
+			b = vet[a] - 80;
+			multa = b * 8;
+			cout << vet[a] << " Km/h excede o limite = multa de R$" << multa << endl;
+			total = multa + total;
+			++c;
+		}
+	}
+	cout << endl;
+	cout << c << " carros foram multados em um valor total de R$" << total;
+
+
+	return 0;
+}
