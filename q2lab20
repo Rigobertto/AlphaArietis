@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+//Escreva um programa que solicite três números inteiros a, b e c.Informe ao
+//usuário que “a” deve ser maior que 1. Seu programa deve passar os valores para
+//uma função que deve retornar a soma de todos os inteiros entre [b e c] que sejam
+//divisíveis por a.
+
+int func(int a, int b, int c);
+int main()
+{
+	int a, b, c, d;
+
+	cout << "Digite três números inteiros a, b e c ('a' maior que 1): " << endl;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+
+	d = func(a, b, c);
+
+	cout << a << " " << b << " " << c << endl;
+	cout << "A soma é igual a " << d << endl;
+
+	return 0;
+}
+
+int func(int a, int b, int c) {
+	int e = 0, f = b, g;
+
+	while (f <= c)
+	{
+		if (f % a == 0)
+		{
+			e = e + f;
+		}
+		++f;
+	}
+	return e;
+}
