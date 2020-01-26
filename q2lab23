@@ -1,0 +1,69 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Construa um programa que leia um arquivo texto contendo o nome e as três
+//notas de vários alunos(uma quantidade indefinida de alunos).Escreva em outro
+//arquivo texto o nome e a situação do aluno(aprovado, quarta prova ou reprovado).
+
+int main()
+{
+	char arquivo[40];
+	cin >> arquivo;
+
+	ifstream fin;
+	fin.open(arquivo);
+
+	if (fin.is_open())
+		cout << "Arquivo encontrado: \n"
+		"____________________\n";
+	else
+	{
+		cout << "Arquivo não encontrado!\n"
+			"____________________\n";
+		system("pause");
+		exit(EXIT_FAILURE);
+	}
+
+	ofstream fout;
+	fout.open("resultado.txt");
+
+	if (fout.is_open())
+		cout << "Arquivo criado com os resultados: \n"
+		"____________________\n";
+	else
+	{
+		cout << "Resultado falhou!\n"
+			"____________________\n";
+		system("pause");
+		exit(EXIT_FAILURE);
+	}
+
+	char nome[20];
+	float n1, n2, n3, media;
+
+	while (!fin.eof())
+	{
+		fin >> nome;
+		fin >> n1;
+		fin >> n2;
+		fin >> n3;
+
+		media = (n1 * 2 + n2 * 3 + n3 * 4) / 9;
+
+		if (media >= 7)
+			fout << nome << " Aprovado!\n";
+		else
+			if (media >= 3.5 && media < 7)
+				fout << nome << " Recuperação!\n";
+			else
+				fout << nome << " Reprovado!\n";
+	}
+
+	fout.close();
+	fin.close();
+
+	cout << " Pronto! ";
+
+	return 0;
+}
