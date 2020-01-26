@@ -1,0 +1,50 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Construa um programa que leia um número desconhecido de peixes de um arquivo
+//texto, chamado “pescado.txt”, e exiba a quantidade total de quilos de peixe
+//pescado.O arquivo é formatado como no exemplo abaixo : o nome do peixe, o peso
+//em gramas e o comprimento em centímetros.
+
+struct regis
+{
+	char linha[80];
+	int peso;
+	int quant;
+	int total = 0;
+};
+
+int main()
+{
+	ifstream fin;
+	char nome[20];
+	cin >> nome;
+	fin.open(nome);
+
+	if (fin.is_open())
+	{
+		cout << "Arquivo abriu!" << endl;
+
+	}
+	else
+	{
+		cout << "Arquivo falhou!" << endl;
+		system("pause");
+		exit(EXIT_FAILURE);
+	}
+	
+
+	regis re = {' '};
+	while (!fin.eof())
+	{
+		fin >> re.linha;
+		fin >> re.peso;
+		fin >> re.quant;
+		re.total = re.quant + re.total;
+	}
+
+	cout << "Total de quilos pescado = " << re.total << endl;
+	fin.close();
+	return 0;
+}
