@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <cctype>
+#include <cstring>
+using namespace std;
+
+//Escreva um programa que peça ao usuário para digitar um nome de arquivo texto e uma palavra que ele deseja procurar neste arquivo.
+//O programa deve dizer se a palavra está ou não presente no arquivo.
+
+int main()
+{
+	ifstream fin;
+	char nome[80];
+	char texto[80];
+	cout << "Digite uma palavra: ";
+	cin >> nome;
+	fin.open("ext.txt");
+
+	if (!fin.is_open())
+	{
+		cout << "Arquivo falhou. \n";
+		system("pause");
+		exit(EXIT_FAILURE);
+	}
+
+	do
+	{
+		fin.getline(texto, 80);
+		if (strcmp(texto, nome) == 1)
+		cout << "A palavra " << nome << " está presente no texto.\n";
+		else
+			cout << "Não há esta palavra no texto.\n";
+
+	} while (!fin.good() && strcmp(texto, nome) == 1);
+
+	fin.close();
+	return 0;
+}
