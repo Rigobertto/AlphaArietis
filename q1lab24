@@ -1,0 +1,48 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct peixaria
+{
+	char nome[90];
+	int peso;
+	int comprimento;
+};
+
+int main()
+{	
+
+	char arquivo[90];
+	ifstream fin;
+	peixaria peixe;
+	fin.open("pescado.dat", ios_base::in | ios_base::binary);
+	cout << "Arquivo aberto beloved: \n";
+	if (fin.is_open())
+	{
+		while (fin.read((char*)& peixe, sizeof(peixaria)))
+		{
+			cout << peixe.nome << " " << peixe.peso << " " << peixe.comprimento;
+			cout << endl;
+		}
+		fin.close();
+	}
+
+	cout << endl;
+	ofstream fout;
+	fout.open("pescado.dat", ios_base::out | ios_base::app | ios_base::binary);
+
+	cout << "Nome do peixe: " << endl;
+	cin >> peixe.nome;
+	cout << "Peso: \n";
+	cin >> peixe.peso;
+	cout << "Comprimento: \n";
+	cin >> peixe.comprimento;
+
+		fout.write((char*) &peixe, sizeof(peixaria));
+		fout.close();
+
+	
+	
+	//peixaria* peixes = new peixaria[tam];
+	return 0;
+}
