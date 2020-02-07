@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+
+void compara(const int * vet, int);
+
+int main()
+{
+	ifstream fin;
+	
+	int vet[100];
+	char arq[80];
+	cin >> arq;
+	fin.open(arq);
+	for (int i = 0 ; i < 100;i++) 
+	{
+		fin >> vet[i];
+	
+	}
+	fin.close();
+
+	compara(vet, 100);
+	return 0;
+}
+
+void compara(const int * vet, int tam) {
+
+	int menor = vet[0];
+	int maior = vet[0];
+	for (int i = 0; i < tam; i++)
+	{  
+		if (vet[i] < menor)
+		{
+			menor = vet[i];
+		}
+		 if (vet[i] > maior)
+		{
+			maior = vet[i];
+		}
+	}
+
+	cout << "Menor: " << menor << endl;
+	cout << "Maior: " << maior << endl;
+}
