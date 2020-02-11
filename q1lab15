@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+//Peça ao usuário para digitar um número inteiro positivo e então crie um vetor dinâmico com essa quantidade de inteiros.
+
+int main()
+{
+	int num;
+	cout << "Digite o tamanho do vetor: ";
+	cin >> num;
+	int* ptr = new int[num];
+	cout << "Criando vetor para " << num << " inteiros... \n";
+	delete []ptr;
+	return 0;
+}
