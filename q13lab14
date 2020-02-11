@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+
+//Crie um registro Imagem que contenha campos para nome, altura, largura e tipo,
+//sendo o tipo um dos seguintes valores : JPG, PNG ou BMP.Use uma enumeração
+//para guardar o tipo da imagem.No programa principal inicialize uma variável do
+//tipo Imagem e passe seu endereço para uma função Detalhes.A função deve
+//receber o endereço de uma Imagem e exibir os seus dados no formato do exemplo
+//abaixo.
+
+enum tipagem { JPG = 1, PNG, BMP };
+
+struct imagem {
+	char nome[20];
+	float altura, largura;
+	tipagem tipo;
+};
+
+void detalhes(imagem* a, int b);
+
+int main()
+{
+	imagem var;
+	cout << "Nome: ";
+	cin >> var.nome;
+	cout << "Altura: ";
+	cin >> var.altura;
+	cout << "Largura: ";
+	cin >> var.largura;
+	cout << "Digite o tipo: \n"
+		"1 = JPG\n"
+		"2 = PNG\n"
+		"3 = BMP\n"
+		"Opção: [_]\b\b";
+	int num;
+	cin >> num;
+
+	detalhes(&var, num);
+
+	return 0;
+}
+
+void detalhes(imagem* a, int b) {
+
+	cout << "A imagem '" << a->nome;
+	if (b == PNG)
+		cout << ".png" << "' com tamanho " << a->altura << "x" << a->largura << " tem formato " << "PNG";
+	if (b == JPG)
+		cout << ".jpg" << "' com tamanho " << a->altura << "x" << a->largura << "tem formato " << "JPG";
+	if (b == BMP)
+		cout << ".bmp" << "' com tamanho " << a->altura << "x" << a->largura << " tem formato " << "BMP";
+	//A imagem “backg.png” com tamanho 1920x1080 tem formato PNG.
+}
