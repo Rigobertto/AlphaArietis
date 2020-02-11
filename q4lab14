@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+//Construa uma função que receba um peixe e exiba o seu conteúdo.
+//a.Faça uma versão utilizando um parâmetro tipo peixe
+//b. Faça uma versão utilizando um parâmetro tipo ponteiro para peixe
+
+struct peixaria {
+	string nome;
+	float peso;
+	int comprimento;
+};
+
+void exibir(peixaria a);
+void exibirptr(peixaria* b);
+
+int main()
+{
+	peixaria peixe;
+	peixe.nome = "Piaba";
+	peixe.peso = 6.2;
+	peixe.comprimento = 5;
+
+	exibir(peixe);
+	exibirptr(&peixe);
+	return 0;
+}
+
+void exibirptr(peixaria* b)
+{
+	cout << "Com ponteiro: " << b->nome << " com " << b->peso << "g e " << b->comprimento << "cm" << endl;
+}
+
+void exibir(peixaria a) 
+{
+	cout << "Sem ponteiro: " << a.nome << " com " << a.peso << "g e " << a.comprimento << "cm" << endl;
+}
