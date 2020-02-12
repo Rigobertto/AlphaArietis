@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+//Escreva uma função StrEqual que recebe duas strings e retorna um valor booleano para indicar se elas são iguais.
+//A função deve funcionar com o trecho de código abaixo :
+
+bool strequal(const char [], char []);
+
+int main()
+{
+	char palavra[20] = "RIGO";
+
+	if (!strequal("RIGO", palavra))
+		cout << "Iguais" << endl;
+	else
+		cout << "Diferentes" << endl;
+	return 0;
+}
+
+bool strequal(const char a[], char b[])
+{
+	bool val;
+		val = strcmp(a, b);
+	return val;
+}
