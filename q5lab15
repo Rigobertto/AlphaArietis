@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+//Crie um programa que peça ao usuário para digitar o número de alunos em uma turma.
+//O programa deve usar essa informação para criar um vetor dinâmico que armazene as notas finais desses alunos.
+//Peça ao usuário para entrar com a nota de dois alunos e em seguida mostre essas notas usando cout.
+
+int main()
+{
+	cout << "Digite o número de alunos (mínimo 2): ";
+	float num;
+	cin >> num;
+	float * ptr = new float[num];
+	cout << "Digite a nota de dois alunos: ";
+	cin >> ptr[0] >> ptr[1];
+	cout << "As notas digitadas foram " << ptr[0] << " e " << ptr[1];
+	
+	delete [] ptr;
+	return 0;
+}
