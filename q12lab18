@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+//Crie um programa que leia a idade de pessoas até que seja digitado 0 (zero).
+//Em seguida exiba quantas pessoas são maiores de 18 anos.
+
+int main()
+{
+	int contador = 0, num, nova, velho;
+	cout << "Digite as idades do grupo: ";
+	do
+	{
+		cin >> num;
+		if (num > 18)
+			contador++;
+	} while (num != 0);
+	cout << "Nesse grupo " << contador << " pessoas são maiores de idade." << endl;
+	
+	return 0;
+}
