@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+//Defina o registro balao como mostrado abaixo.Construa um programa para alocar dinamicamente uma variável do tipo balao.
+//Peça ao usuário para entrar com valores para cada um dos membros e em seguida exiba o conteúdo do registro.
+
+struct balao {
+	float diametro;
+	char marca[20]; 
+	int modelo;
+};
+
+int main()
+{
+	balao * ptr = new balao;
+	cout << "Digite o diametro: ";
+	cin >> ptr->diametro;
+	cout << "Digite a marca: ";
+	cin >> ptr->marca;
+	cout << "Digite o modelo: ";
+	cin >> ptr->modelo;
+
+	cout << endl;
+	cout << ptr->diametro << endl;
+	cout << ptr->marca << endl;
+	cout << ptr->modelo << endl;
+
+	delete ptr;
+	return 0;
+}
