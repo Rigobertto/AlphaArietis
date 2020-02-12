@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+//Crie um registro "Local" com os campos nome, país e continente.Pergunte ao usuário 
+//quantos locais ele quer visitar nas próximas férias e crie um vetor de locais alocando 
+//dinamicamente o espaço de acordo com quantos locais ele quer visitar.Use um laço for 
+//para armazenar as informações dos locais que o usuário deseja visitar, e depois do 
+//armazenamento mostre os locais que ele escolheu.
+//Libere o espaço alocado dinamicamente ao final do programa.
+
+struct local {
+	char nome[20];
+	char pais[20];
+	char continente[20];
+};
+
+int main()
+{
+	int num;
+	cout << "Quantos lugares você deseja visitar: ";
+	cin >> num;
+	local* ptr = new local[num];
+
+	cout << endl;
+	for (int i = 0; i < num; i++)
+	{
+		cout << "Digite o nome do local: ";
+		cin >> ptr[i].nome;
+		cout << "Digite o nome do país: ";
+		cin >> ptr[i].pais;
+		cout << "Digite o nome do continente: ";
+		cin >> ptr[i].continente;
+		cout << endl;
+	}
+
+	cout << num << " locais listados para viagem: " << endl;
+	cout << endl;
+	for (int i = 0; i < num; i++)
+	{
+		cout << "Nome: " << ptr[i].nome << endl;
+		cout << "País: " << ptr[i].pais << endl;
+		cout << "Continente: " << ptr[i].continente << endl;
+		cout << endl;
+	}
+	delete[] ptr;
+	return 0;
+}
