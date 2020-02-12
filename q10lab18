@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+// Construa um programa que peça ao usuário para digitar um texto, encerrando a 
+//entrada apenas quando o caractere @ for lido. Depois do @ ser lido, mostre o texto recebido.
+
+int main() 
+{
+	char ch;
+	cin.get(ch);
+	while (ch != '@')
+	{
+		cout << ch;
+		cin.get(ch);
+	}
+}
