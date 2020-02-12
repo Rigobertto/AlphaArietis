@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+//Daiane investiu R$100 com 10 % de rendimento.Isto é, a cada ano, 
+//o rendimento é de 10 % do valor original investido, ou seja, R$10 de ganho todo ano :
+//rendimento de Daiane = 0.10 x investimento original
+//No mesmo instante, Célia investiu R$100 com 5 % de rendimento combinado.Isto é, 
+//o rendimento é 5 % do saldo atual, incluindo os rendimentos passados :
+//rendimento de Célia = 0.05 x saldo atual
+//Célia ganha 5 % de R$100 no primeiro ano, dando a ela R$105 de saldo.No ano seguinte ela 
+//ganha 5 % de R$105, dando a ela R$110.25, e assim por diante.Escreva um programa que ache quantos anos leva 
+//para o saldo de Célia ultrapassar o saldo de Daiane e mostre o valor dos saldos neste instante.
+
+int main() 
+{
+	double diane = 100;
+	  //rendimento de Daiane = 0.10 x investimento original
+	int anos = 0;
+
+	double celia = 100; //rendimento de Célia = 0.05 x saldo atual
+
+	
+	while (celia <= diane)
+	{
+		diane = diane + 10;
+		celia = celia + (0.05 * celia);
+		++anos;
+	}
+
+	cout << fixed;
+	cout.precision(2);
+	cout << "Se passaram " << anos << " anos para os saldos atingirem os valores." << endl;
+	cout << "Diane: " << diane << endl;
+	cout << "Célia: " << celia << endl;
+}
