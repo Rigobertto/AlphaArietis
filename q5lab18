@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+//Escreva um programa que peça ao usuário para digitar números.Após cada entrada, o programa deve mostrar o 
+//valor acumulado da soma dos números naquele momento.O programa deve encerrar quando for digitado o número zero.
+
+
+int main()
+{
+	int num, total = 0;
+	cout << "Digite números inteiros (0 para finalizar): ";
+	do
+	{
+		cin >> num;
+		total += num;
+		cout << "Soma parcial :" << total << endl;
+	} while (num != 0);
+	return 0;
+}
