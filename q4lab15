@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+//Defina um registro que descreva um peixe.O registro deve incluir o tipo(string), 
+//o peso(ponto - flutuante) e o comprimento(inteiro) do peixe. Escreva o código para criar um
+//vetor dinâmico de peixes. O tamanho do vetor deve ser 
+//definido pelo usuário. Mostre como ler e exibir o peso do segundo peixe.
+
+struct peixe {
+	char tipo[20];
+	float peso;
+	int comp;
+};
+
+int main()
+{
+	int num;
+	cout << "Digite o tamanho para o vetor de registro: ";
+	cin >> num;
+	peixe *ptr = new peixe[num];
+
+	cout << "Tipo: ";
+	cin >> ptr[1].tipo;
+	cout << "Peso: ";
+	cin >> ptr[1].peso;
+	cout << "Comprimento: ";
+	cin >> ptr[1].comp;
+
+	cout << endl;
+
+	cout << "O peso do peixe é: " << ptr[1].peso;
+	delete []ptr;
+	return 0;
+}
