@@ -1,0 +1,33 @@
+//Escreva um programa que leia um valor inteiro do usuário e armazene - o em um arquivo binário chamado “interger.bin”.
+//Ao entrar, o programa deve verificar se o arquivo “integer.bin” existe, e em caso positivo, deve ler e exibir o número na tela.
+//Exemplo 1:
+//Digite um inteiro : 43
+//Número armazenado no arquivo integer.bin.
+
+int main()
+{
+	//==========================-LER-===========================================
+	ifstream fin;
+	int senha;
+	fin.open("interger.bin", ios_base::in | ios_base::binary);
+	if (fin.is_open()) {
+		cout << "Arquivo integer.bin encontrado! " << endl;
+			
+		while (fin.read((char*) &senha, sizeof(int)))
+		{
+			cout << "Ele contém o número: " << senha << endl;
+		}
+		fin.close();
+	}
+	//==========================-ESCREVER-======================================
+	ofstream fout;
+	fout.open("interger.bin", ios_base::out | ios_base::binary| ios_base::app);
+	int num;
+	cout << "Digite um inteiro: ";
+	cin >> num;
+	fout.write((char*)&num, sizeof(int));
+	fout.close();
+	cout << "\n Número armazenado no arquivo integer.bin." << endl;
+
+	return 0;
+};
