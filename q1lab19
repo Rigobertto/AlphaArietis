@@ -1,0 +1,22 @@
+#include <cstring>
+using namespace std;
+
+//Escreva um programa que utilize um vetor de caracteres e um laço para ler uma palavra por
+//vez até que a palavra “pronto” seja encontrada.
+//O programa deve então mostrar o número de palavras digitadas(sem contar pronto).Um exemplo de execução é mostrado abaixo.
+
+int main() 
+{
+	char palavra[80];
+	cout << "Digite palavras (pronto para parar): " << endl;
+	int contador=0;
+	do
+	{
+		cin >> palavra;
+		contador++;
+	}while (strcmp(palavra, "pronto"));
+
+	cout << "Foram digitadas um total de " << --contador << " palavras." << endl;
+
+	return 0;
+}
