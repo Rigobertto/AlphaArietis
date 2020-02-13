@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+//Escreva um programa que ache a média dos elementos de uma matriz(vetor
+//bidimensional) com 5 linhas e 5 colunas.A matriz deve ser inicializada no
+//programa para os 25 valores inteiros dados abaixo.
+
+int main()
+{
+	int matriz[5][5] =
+	{
+		{ 38,51,50,56,98 },
+		{ 17,65,25,62,54 },
+		{ 23,23,64,45,92 },
+		{ 41,39,19,68,87 },
+		{ 65,10,12,22,13 }
+	};
+	int total=0;
+	double media;
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; i < 5; i++)
+		{
+			total = total + matriz[i][j];
+		}
+	}
+	//media = total / 25.0f;
+	cout << "A média dos valores é: " << total / 25.0f << endl;
+	
+	return 0;
+}
