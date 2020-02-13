@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+//Escreva um programa para ler uma matriz 3x2, como a mostrada no exemplo abaixo,
+//e armazenar a sua transposta em uma matriz 2x3.Construa uma função para exibir a matriz transposta.
+
+int main() 
+{
+	cout << "Digite os números da matriz 3x2: " << endl;
+	int matriz[3][2];
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cin >> matriz[i][j];
+		}
+	}
+	cout <<"Exibe a matriz: " << endl;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cout << matriz[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	cout << "Matriz transposta: " <<endl;
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			cout << matriz[j][i] << " ";
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
