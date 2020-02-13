@@ -1,0 +1,102 @@
+#include <iostream>
+#include <cstring>
+#include <fstream>
+#include <cctype>
+using namespace std;
+
+//Crie um registro Soldado com os campos nome, eliminações, mortes, taxa de eliminações 
+//por morte(eliminações / mortes) e número de partidas jogadas.Na função principal leia 
+//um soldado de um arquivo binário.Se o arquivo não existir, você deve direcionar o usuário 
+//para a criação um novo soldado.Quando o soldado for lido(seja pelo arquivo ou pelo teclado), 
+//você deve dar as seguintes opções ao usuário :
+
+struct soldado{
+	char nome[20];
+	float eli;
+	float mortes;
+	float taxa = eli/mortes;
+	int num;
+};
+void Exibir(soldado & a);
+int main()
+{
+	soldado novo;
+	ifstream fin;
+	char arquivo[80];
+	cout << "Digite o nome do arquivo: ";
+	cin >> arquivo;
+	fin.open(arquivo, ios_base::in);
+	if (fin.is_open())
+	{
+		while (fin.read((char*)& novo, sizeof(soldado)));
+		{
+			cout << novo.nome << endl;
+			cout << novo.eli << endl;
+			cout << novo.mortes << endl;
+			cout << novo.num << endl;
+		}
+		fin.close();
+	}
+	
+	else {
+
+		cin >> novo.nome;
+		cin >> novo.eli;
+		cin >> novo.mortes;
+		cin >> novo.num;
+	}
+
+	cout << "[N]ovo soldado (sobrescreve o anterior)\n"
+		"[A]tualiza soldado(com os dados da última partida)\n"
+		"[E]xibe soldado(atual)\n"
+		"[S]air\n";
+	cout << "Opição: [_]\b\b";
+
+	char ch;
+	cin >> ch;
+	ch = toupper(ch);
+	cout << endl;
+	switch (ch)
+	{
+	case 'N':   
+		cout << "Nome: ";
+		cin >> novo.nome;
+		cout << "Eliminações: ";
+		cin >> novo.eli;
+		cout << "Mortes: ";
+		cin >> novo.mortes;
+		cout << "Número de partidas: ";
+		cin >> novo.num;
+		cout << endl;
+		break;
+	case 'A':
+		cout << "Eliminações: ";
+		cin >> novo.eli;
+		cout << "Mortes: ";
+		cin >> novo.mortes;
+		cout << endl;
+		break;
+	case 'E':
+		Exibir(novo);
+		break;
+	case 'S':
+		cout << "Fim do programa!" << endl;
+		break;
+	default:
+		cout << "Opição invalida!" << endl;
+		break;
+	}
+	ofstream fout;
+	fout.open(arquivo, ios_base::out | ios_base::binary);
+	fout.write((char*)& novo, sizeof(soldado));
+	fout.close();
+	
+	return 0;
+}
+void Exibir(soldado& a) {
+	cout << "Nome: " << a.nome << endl;
+	cout << "Eliminações: " << a.eli << endl;
+	cout << "Mortes: " << a.mortes << endl;
+	cout << "Taxa e eliminações por morte: " << a.taxa << endl;
+	cout << "Número de partidas: " << a.num << endl;
+}
