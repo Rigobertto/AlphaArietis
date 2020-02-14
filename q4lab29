@@ -1,0 +1,34 @@
+#include <iostream> 
+#include <string>
+#include <cstring>
+using namespace std;
+
+//Construa uma função template max5() que receba um vetor de 5 elementos de tipo T e 
+//retorne o maior elemento do vetor.Como o tamanho do vetor é fixo, não há necessidade de receber o tamanho do vetor por parâmetro.
+//Teste a função em um programa que crie um vetor de 5 inteiros e outro de 5 doubles.
+
+template <typename T>
+int max5(T a[]){
+
+	int num = a[0];
+	for (int i = 1; i < 5; i++) {
+		if (num < a[i])
+			num = a[i];
+	}
+	return num;
+}
+
+int main()
+{
+	int vet[5] = { 2,5,4,3,0 };
+	int val;
+	val = max5(vet);
+	cout << "'Maior valor dentro do vetor: " << val << endl;
+
+	double ve[5] = { 2,8,4,7,0 };
+	double valor = max5(ve);
+	cout << "'Maior valor dentro do vetor: " << valor << endl;
+
+
+	return 0;
+}
