@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+//Escreva uma função que receba uma referência para um registro caixa e mostre o valor de cada membro.
+//b.Escreva uma função que receba uma referência para um registro caixa e modifique o membro volume para o produto das suas dimensões.
+struct caixa
+{
+	char marca[40] = "Ok"; 
+	float altura = 10;
+	float largura = 10; 
+	float comprimento = 20; 
+	float volume = 0;
+};
+void exibir(caixa a);
+void ex(caixa b);
+int main()
+{
+	caixa novo;
+	caixa& outro = novo;
+	ex(outro);
+	exibir(outro);
+	
+	
+	return 0;
+}
+void exibir(caixa a) {
+	ex(a);
+	cout << a.marca<< endl;
+	cout << a.altura << endl;
+	cout << a.largura << endl;
+	cout << a.comprimento << endl;
+	cout << a.volume << endl;
+}
+void ex(caixa b) {
+	b.volume = b.altura * b.largura;
+}
