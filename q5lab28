@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+//Construa uma função calcular que use referências em seus parâmetros com o objetivo 
+//de retornar mais de um valor ao programa principal.A função deve receber um par de valores, 
+//definido pelo registro abaixo, e dois valores inteiros que devem ser modificados para guardar, 
+//respectivamente a soma e a multiplicação dos valores no par.
+//Utilize const para os parâmetros que não serão modificados dentro da função.
+
+struct par { int x; int y; };
+void exibir(const par & a, int s, int m);
+
+int main()
+{
+	int soma = 0, mult = 0;
+	par p;
+	cout << "Digite um par de valores: ";
+	cin >> p.x >> p.y;
+	exibir(p, soma, mult);
+	return 0;
+}
+void exibir(const par& a, int s, int m) {
+	s = a.x + a.y;
+	m = a.x * a.y;
+	cout << "Soma: " << s << endl;
+	cout << "Multiplicação: " << m << endl;
+}
