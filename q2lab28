@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+//Escreva uma função que mantenha um contador de quantas vezes ela foi chamada.
+//A função deve mostrar o valor desse contador a cada chamada.Por exemplo, 
+//se a função for chamada 3 vezes, a saída do programa deve ser como mostrada abaixo :
+//void Exibir(int & a);
+int main()
+{
+	int b = 0;
+	Exibir(b);
+	Exibir(b);
+	Exibir(b);
+	return 0;
+}
+void Exibir(int& a) {
+	cout << ++a << " chamada da função" << endl;
+}
